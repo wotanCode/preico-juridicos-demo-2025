@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import logoPreico from "@assets/images/logoPreico.png";
+
+const menuItems = [
+  { title: "INICIO", sub: "", href: "/" },
+  { title: "USURA", sub: "En créditos", href: "#" },
+  { title: "USURA", sub: "En vehículos", href: "#" },
+  { title: "LEY DE SEGUNDA OPORTUNIDAD", sub: "", href: "#" },
+  { title: "CONTACTO", sub: "Preico Consulting", href: "#" },
+  { title: "BLOG", sub: "Noticias", href: "#" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 w-full bg-[#061a1f] text-white z-50 font-sans shadow-lg"
+>
+  <nav
+    class="max-w-7xl mx-auto relative flex items-center justify-between px-6 py-3"
+  >
+    <!-- Logo -->
+    <a
+      href="/"
+      class="shrink-0 transition-transform hover:scale-105 duration-300 relative z-10"
+    >
+      <Image
+        src={logoPreico}
+        alt="Preico Jurídicos"
+        width={100}
+        height={100}
+        class="w-20 h-auto object-contain"
+      />
+    </a>
+
+    <!-- Combined Menu & Client Area -->
+    <ul
+      class="hidden xl:flex items-center justify-center absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none z-0"
+    >
+      <!-- Main Menu Items (Desktop Only) -->
+      {
+        menuItems.map((item) => (
+          <li class="pointer-events-auto mx-4">
+            <a
+              href={item.href}
+              class="relative group flex flex-col items-center justify-center px-2 py-1"
+            >
+              <span class="text-sm font-bold uppercase tracking-widest leading-none mb-0.5">
+                {item.title}
+              </span>
+              {item.sub && (
+                <span class="text-[10px] text-gray-300 font-light uppercase tracking-wide leading-none">
+                  {item.sub}
+                </span>
+              )}
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 ease-out group-hover:w-full" />
+            </a>
+          </li>
+        ))
+      }
+
+      <li class="absolute right-6 pointer-events-auto">
+        <a href="#" class="relative group flex flex-col items-end px-2 py-1">
+          <span
+            class="text-sm font-bold uppercase tracking-widest leading-none mb-0.5"
+            >ÁREA CLIENTE</span
+          >
+          <span
+            class="text-[10px] text-gray-300 font-light uppercase tracking-wide leading-none"
+            >Iniciar sesión</span
+          >
+          <span
+            class="absolute bottom-0 right-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 ease-out group-hover:w-full"
+          ></span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      class="xl:hidden text-white focus:outline-none ml-auto relative z-10"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </nav>
+</header>

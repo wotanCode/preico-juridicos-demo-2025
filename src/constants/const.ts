@@ -1,0 +1,1 @@
+export const PREICOJURIDICOS = "Preico Juridicos";

@@ -1,0 +1,11 @@
+# Directories
+node_modules/
+dist/
+public/
+.vscode/
+.astro/
+
+#Files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
