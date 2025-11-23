@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@config "../../../tailwind.config.mjs";
+
+:root {
+  --color-primary: 162 133 85;
+}
