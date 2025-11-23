@@ -32,26 +32,27 @@ const menuItems = [
       />
     </a>
 
-    <!-- Menu -->
+    <!-- Desktop Menu -->
     <ul
       class="hidden lg:flex items-center justify-center absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none z-0"
     >
-      <!-- Main Menu-->
       {
         menuItems.map((item) => (
           <li class="pointer-events-auto mx-4 max-w-36">
             <a
               href={item.href}
-              class="relative group flex flex-col items-center justify-center px-2 py-1 "
+              class="relative group flex flex-col items-center justify-center px-2 py-1"
             >
               <span class="text-xs font-bold uppercase tracking-widest leading-none mb-0.5">
                 {item.title}
               </span>
+
               {item.sub && (
                 <span class="text-xs text-gray-300 font-light uppercase tracking-wide leading-none">
                   {item.sub}
                 </span>
               )}
+
               <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 ease-out group-hover:w-full" />
             </a>
           </li>
@@ -78,6 +79,7 @@ const menuItems = [
 
     <!-- Mobile Menu Toggle -->
     <button
+      id="mobile-menu-btn"
       class="lg:hidden text-white focus:outline-none ml-auto relative z-10"
     >
       <svg
@@ -94,5 +96,56 @@ const menuItems = [
           d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="absolute top-full left-0 w-full bg-[#061a1f] border-t border-[#8bbf47] shadow-lg lg:hidden flex-col items-center gap-6 z-40
+        max-h-0 overflow-hidden opacity-0 translate-y-4
+        transition-all duration-300 ease-out
+        [&.open]:max-h-[600px]
+        [&.open]:opacity-100
+        [&.open]:translate-y-0
+        [&.open]:py-6"
+    >
+      {
+        menuItems.map((item) => (
+          <div class="flex justify-center mb-2">
+            <a href={item.href} class="text-center group ">
+              <span class="block text-sm font-bold uppercase tracking-widest group-hover:text-yellow-400 transition-colors">
+                {item.title}
+              </span>
+              {item.sub && (
+                <span class="block text-xs text-gray-400 font-light uppercase group-hover:text-gray-200 transition-colors">
+                  {item.sub}
+                </span>
+              )}
+            </a>
+          </div>
+        ))
+      }
+
+      <div class="my-3"></div>
+
+      <a href="#" class="text-center group">
+        <span
+          class="block text-sm font-bold uppercase tracking-widest text-yellow-400 group-hover:text-white transition-colors"
+          >ÁREA CLIENTE</span
+        >
+        <span
+          class="block text-xs text-gray-300 font-light uppercase group-hover:text-white transition-colors"
+          >Iniciar sesión</span
+        >
+      </a>
+    </div>
   </nav>
 </header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("open");
+  });
+</script>
