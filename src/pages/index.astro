@@ -11,19 +11,23 @@ const title = `${PREICOJURIDICOS}`;
 ---
 
 <Layout title={title}>
-  <section class="flex flex-col gap-6">
-    <Banner
-      image={{ src: raulImage, alt: "Raul Castañeda" }}
-      quoteColor="text-primary"
-      preTitle="LA"
-      title="REVOLUCIÓN CONTRA LAS INJUSTICIAS"
-    />
+  <div class="lex flex-col gap-6">
+    <section>
+      <Banner
+        image={{ src: raulImage, alt: "Raul Castañeda" }}
+        quoteColor="text-primary"
+        preTitle="LA"
+        title="REVOLUCIÓN CONTRA LAS INJUSTICIAS"
+      />
+    </section>
 
-    <VideoSection
-      quoteText="Esto es la revolución contra las injusticias"
-      quoteColor="text-primary"
-      videoUrl="https://www.youtube.com/embed/kXajmZhEoqI?si=56TTFc-Yj1lfciuv"
-    />
+    <section>
+      <VideoSection
+        quoteText="Esto es la revolución contra las injusticias"
+        quoteColor="text-primary"
+        videoUrl="https://www.youtube.com/embed/kXajmZhEoqI?si=56TTFc-Yj1lfciuv"
+      />
+    </section>
 
     <section class="max-w-7xl mx-auto px-4 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -77,5 +81,5 @@ const title = `${PREICOJURIDICOS}`;
         />
       </div>
     </section>
-  </section></Layout
->
+  </div>
+</Layout>
