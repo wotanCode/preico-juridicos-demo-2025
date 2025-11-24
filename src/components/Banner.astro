@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import arrowRight from "@/assets/images/home-header-landscape-right.png";
+
+interface Props {
+  image: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  quoteColor?: string;
+  preTitle?: string;
+  title: string;
+  subTitle?: string;
+}
+
+const {
+  image,
+  quoteColor = "text-primary",
+  preTitle,
+  title,
+  subTitle,
+} = Astro.props;
+---
+
+<section class="relative w-full h-[512px] flex items-center overflow-hidden">
+  <!-- LEFT PERSON -->
+  <div
+    class="absolute left-0 bottom-0 h-full flex items-end z-10 pointer-events-none pl-2"
+  >
+    <Image
+      src={image.src}
+      alt={image.alt}
+      class="h-full w-auto object-contain"
+    />
+  </div>
+
+  <!-- CENTER CONTENT -->
+  <div class="relative z-20 w-full flex items-center justify-center px-4">
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+      <!-- ICON + TEXT (oculto móvil + tablet, visible desktop) -->
+      <div class="hidden md:hidden lg:flex flex-col items-center text-center">
+        <!-- Quote Icon -->
+        <svg
+          class={`w-16 h-16 mb-2 ${quoteColor}`}
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"
+          ></path>
+        </svg>
+
+        <!-- TEXT -->
+        <h2
+          class="text-white uppercase leading-tight tracking-wider text-5xl font-bold"
+        >
+          {
+            preTitle && (
+              <span class="text-2xl  font-light inline">{preTitle} </span>
+            )
+          }
+          <span class="inline">{title}</span>
+          {subTitle && <span class="text-white/90 inline"> {subTitle}</span>}
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT ARROW -->
+  <div
+    class="absolute right-0 top-0 h-full w-64 md:w-80 lg:w-96 pointer-events-none z-0"
+  >
+    <Image
+      src={arrowRight}
+      alt="Arrow Background"
+      class="h-full w-full object-cover opacity-80"
+    />
+  </div>
+</section>

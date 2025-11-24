@@ -1,20 +1,20 @@
 ---
 import Layout from "@/layout/Layout.astro";
 
-// import Description from "@/modules/aboutMe/description/Description.astro";
-// import Hero from "@/modules/aboutMe/Hero/Hero.astro";
-
-// import preicojuridicos from "@/assets/icons/coin.astro";
-
 import { PREICOJURIDICOS } from "@/constants/const";
+import Banner from "@/components/Banner.astro";
+import raulImage from "@/assets/images/home-header-landscape-left-raul.png";
 
 const title = `${PREICOJURIDICOS}`;
 ---
 
 <Layout title={title}>
   <section class="flex flex-col gap-6">
-    <!-- <Hero />
-
-    <Description /> -->
+    <Banner
+      image={{ src: raulImage, alt: "Raul Castañeda" }}
+      quoteColor="text-primary"
+      preTitle="LA"
+      title="REVOLUCIÓN CONTRA LAS INJUSTICIAS"
+    />
   </section>
 </Layout>
