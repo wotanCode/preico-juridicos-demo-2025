@@ -1,0 +1,93 @@
+---
+interface Props {
+  quoteText: string;
+  quoteColor?: string;
+  videoUrl: string;
+}
+
+const { quoteText, quoteColor = "text-primary", videoUrl } = Astro.props;
+---
+
+<section class="flex flex-col justify-center items-center max-w-7xl mx-auto">
+  <div class="flex flex-col lg:flex-row items-center justify-around gap-12">
+    <!-- Left Content: Text & Stats -->
+    <div
+      class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left"
+    >
+      <!-- Quote Icon -->
+      <svg
+        class={`w-12 h-12 mb-4 ${quoteColor}`}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"
+        ></path>
+      </svg>
+
+      <!-- Main Quote Text -->
+      <h3 class="text-white text-2xl md:text-3xl font-medium italic mb-2">
+        {quoteText}
+      </h3>
+
+      <!-- Subtext -->
+      <p class="text-gray-300 text-sm mb-1">
+        (Esta frase se cita en este vídeo)
+      </p>
+      <p class="text-primary font-bold uppercase tracking-wider mb-8">
+        CON RAÚL CASTAÑEDA
+      </p>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+        <!-- Stat 1 -->
+        <div
+          class="border border-primary/50 p-4 flex flex-col items-center justify-center text-center"
+        >
+          <span class="text-white font-bold text-xl">+5.000</span>
+          <span class="text-gray-400 text-xs uppercase">Casos ganados</span>
+        </div>
+        <!-- Stat 2 -->
+        <div
+          class="border border-primary/50 p-4 flex flex-col items-center justify-center text-center"
+        >
+          <span class="text-white font-bold text-xl">+120M €</span>
+          <span class="text-gray-400 text-xs uppercase">Recuperados</span>
+        </div>
+        <!-- Stat 3 -->
+        <div
+          class="border border-primary/50 p-4 flex flex-col items-center justify-center text-center"
+        >
+          <span class="text-white font-bold text-xl">100%</span>
+          <span class="text-gray-400 text-xs uppercase">Casos ganados</span>
+        </div>
+        <!-- Stat 4 -->
+        <div
+          class="border border-primary/50 p-4 flex flex-col items-center justify-center text-center"
+        >
+          <span class="text-white font-bold text-xl">1.900 m²</span>
+          <span class="text-gray-400 text-xs uppercase">En instalaciones</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Content: Video -->
+    <div class="w-full lg:w-1/2">
+      <div
+        class="aspect-video w-full border-4 border-gray-800 shadow-2xl rounded-lg overflow-hidden relative group"
+      >
+        <iframe
+          class="w-full h-full"
+          src={videoUrl}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
