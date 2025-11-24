@@ -1,0 +1,72 @@
+---
+interface Props {
+  color:
+    | "orange"
+    | "green"
+    | "white"
+    | "gray"
+    | "blue"
+    | "brown"
+    | "pink"
+    | "apple";
+  title: string;
+  body: string;
+  showIcon?: boolean;
+  href?: string;
+}
+
+const { color, title, body, showIcon = false, href } = Astro.props;
+
+const userColors = {
+  orange: { border: "#F15929", bg: "#242524" },
+  green: { border: "#8BBF47", bg: "#1D2C26" },
+  white: { border: "#FFFFFF", bg: "#253133" },
+  gray: { border: "#9C9398", bg: "#1E292C" },
+  blue: { border: "#05ADEF", bg: "#132B32" },
+  brown: { border: "#F7931D", bg: "#242923" },
+  pink: { border: "#AB7BB4", bg: "#1F282E" },
+  apple: { border: "#FFFF87", bg: "#253129" },
+};
+
+const selectedColor = userColors[color];
+const Tag = href ? "a" : "div";
+---
+
+<Tag
+  href={href}
+  class="block w-full h-full p-8 transition-transform hover:-translate-y-1 group"
+  style={`border-top: 4px solid ${selectedColor.border}; background-color: ${selectedColor.bg};`}
+>
+  <div class="flex flex-col h-full justify-between gap-6">
+    <div>
+      <h3
+        class="text-white text-xl font-bold uppercase mb-4 leading-tight tracking-wide"
+      >
+        {title}
+      </h3>
+      <p class="text-gray-300 text-sm leading-relaxed">
+        {body}
+      </p>
+    </div>
+
+    {
+      showIcon && (
+        <div class="flex justify-center mt-auto">
+          <svg
+            class="w-8 h-8 text-[#C6A87C] group-hover:text-white transition-colors"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </div>
+      )
+    }
+  </div>
+</Tag>

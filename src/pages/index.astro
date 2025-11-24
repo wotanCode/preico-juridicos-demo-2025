@@ -4,6 +4,7 @@ import Layout from "@/layout/Layout.astro";
 import { PREICOJURIDICOS } from "@/constants/const";
 import Banner from "@/components/Banner.astro";
 import VideoSection from "@/components/VideoSection.astro";
+import Card from "@/components/Card.astro";
 import raulImage from "@/assets/images/home-header-landscape-left-raul.png";
 
 const title = `${PREICOJURIDICOS}`;
@@ -23,5 +24,58 @@ const title = `${PREICOJURIDICOS}`;
       quoteColor="text-primary"
       videoUrl="https://www.youtube.com/embed/kXajmZhEoqI?si=56TTFc-Yj1lfciuv"
     />
+
+    <section class="max-w-7xl mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card
+          color="orange"
+          title="USURA EN CRÉDITOS"
+          body="Cómo recuperar o anular los intereses abusivos en tarjetas de crédito, tarjetas revolving, préstamos, créditos al cosumo, micro préstamos..."
+          href="#"
+        />
+        <Card
+          color="green"
+          title="USURA EN VEHICULOS"
+          body="Cómo recuperar o anular los intereses abusivos en préstamos y en la financiación de la compra de tu vehículo."
+          href="#"
+        />
+        <Card
+          color="white"
+          title="FICHERO DE MOROSIDAD"
+          body="Cómo solicitar indemnización por la indebida inclusión en los ficheros de morosidad."
+          href="#"
+        />
+        <Card
+          color="gray"
+          title="CONOCE NUESTRA ASOCIACIÓN ARECOIN"
+          body="Nuestra revolución contra las injusticias elevada a su máximo exponente. Os presentamos ARECOIN asociación a través de la cual nuestros agentes os ayudarán y asesorarán de forma gratuita en vuestras consultas. No dudes en ponerte en contacto con nuestro equipo y conocer tus derechos."
+        />
+
+        <!-- Second Row -->
+        <Card
+          color="blue"
+          title="CONOCE NUESTRA FUNDACIÓN"
+          body="Nuestro compromiso en ayudar al prójimo y a los más necesitados ha llegado a su máximo nivel. La fundación Preico Jurídicos nace con la idea de hacer historia y poder ayudar a quien más lo necesita SIN AYUDAS estatales ni gubernamentales. Un equipo humano y brillante a disposición de los más desfavorecidos."
+        />
+        <Card
+          color="brown"
+          title="LEY DE SEGUNDA OPORTUNIDAD"
+          body="Cómo recuperar o anular los intereses abusivos en préstamos y en la financiación de la compra de tu vehículo."
+          href="#"
+        />
+        <Card
+          color="pink"
+          title="CONTACTO"
+          body="Cómo contactar con nosotros"
+          href="#"
+        />
+        <Card
+          color="apple"
+          title="BLOG"
+          body="Cómo conocer con detalle todas las sentencias y casos significativos ganados."
+          href="#"
+        />
+      </div>
+    </section>
   </section></Layout
 >
