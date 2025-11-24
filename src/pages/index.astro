@@ -1,11 +1,15 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "@/layout/Layout.astro";
 
 import { PREICOJURIDICOS } from "@/constants/const";
 import Banner from "@/components/Banner.astro";
 import VideoSection from "@/components/VideoSection.astro";
 import Card from "@/components/Card.astro";
+
 import raulImage from "@/assets/images/home-header-landscape-left-raul.png";
+import appleImage from "@/assets/images/home-download-landscape.png";
 
 const title = `${PREICOJURIDICOS}`;
 ---
@@ -80,6 +84,14 @@ const title = `${PREICOJURIDICOS}`;
           href="#"
         />
       </div>
+    </section>
+
+    <section>
+      <Image
+        src={appleImage}
+        alt="app apple"
+        class="w-full object-cover h-[550px]"
+      />
     </section>
   </div>
 </Layout>
