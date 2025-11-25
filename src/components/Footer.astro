@@ -213,19 +213,30 @@ import spainMap from "../assets/images/spainMap.png";
   </section>
 
   <!-- Map Section -->
-  <section class="relative flex w-full justify-end items-center mt-4">
-    <Image
-      src={spainMap}
-      alt="Mapa de España"
-      class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none w-32 h-32"
-      width={128}
-      height={128}
-    />
-
+  <section class="relative flex w-full justify-between items-center mt-4 px-2">
+    <!-- Texto a la izquierda -->
     <p
-      class="relative z-10 text-white font-bold text-lg text-right uppercase tracking-wider leading-tight select-text"
+      class="text-white font-bold text-lg tracking-wide flex items-center gap-2"
     >
-      Prestamos nuestros servicios en toda España
+      Creado con amor por Pedro Yanez
+      <span class="text-red-500">❤️</span>
     </p>
+
+    <!-- Texto + mapa a la derecha -->
+    <div class="relative flex items-center">
+      <p
+        class="relative z-10 text-white font-bold text-lg text-right uppercase tracking-wider leading-tight select-text mr-4"
+      >
+        Prestamos nuestros servicios en toda España
+      </p>
+
+      <Image
+        src={spainMap}
+        alt="Mapa de España"
+        class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none w-32 h-32"
+        width={128}
+        height={128}
+      />
+    </div>
   </section>
 </footer>
