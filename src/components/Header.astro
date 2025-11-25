@@ -5,10 +5,10 @@ import logoPreico from "@assets/images/logoPreico.png";
 const menuItems = [
   { title: "INICIO", sub: "", href: "/" },
   { title: "USURA", sub: "En créditos", href: "/usura-creditos" },
-  { title: "USURA", sub: "En vehículos", href: "#" },
-  { title: "LEY DE SEGUNDA OPORTUNIDAD", sub: "", href: "#" },
-  { title: "CONTACTO", sub: "Preico Consulting", href: "#" },
-  { title: "BLOG", sub: "Noticias", href: "#" },
+  { title: "USURA", sub: "En vehículos", href: "/usura-vehiculos" },
+  { title: "LEY DE SEGUNDA OPORTUNIDAD", sub: "", href: "/lso" },
+  { title: "CONTACTO", sub: "Preico Consulting", href: "/contacto" },
+  { title: "BLOG", sub: "Noticias", href: "/blog" },
 ];
 ---
 
@@ -61,7 +61,10 @@ const menuItems = [
 
       <!-- Client Area -->
       <li class="absolute right-6 pointer-events-auto">
-        <a href="#" class="relative group flex flex-col items-end px-2 py-1">
+        <a
+          href="/auth/registro"
+          class="relative group flex flex-col items-end px-2 py-1"
+        >
           <span
             class="text-xs font-bold uppercase tracking-widest leading-none mb-0.5"
             >ÁREA CLIENTE</span
@@ -127,7 +130,7 @@ const menuItems = [
 
       <div class="my-3"></div>
 
-      <a href="#" class="text-center group">
+      <a href="/auth/registro" class="text-center group">
         <span
           class="block text-sm font-bold uppercase tracking-widest text-yellow-400 group-hover:text-white transition-colors"
           >ÁREA CLIENTE</span

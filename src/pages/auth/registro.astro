@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import logoPreico from "@assets/images/logoPreico.png";
+import { ClientRouter } from "astro:transitions";
+import "@assets/styles/global.css";
+
+const title = "Área Cliente | Preico Jurídicos";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <ClientRouter />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="bg-[#061a1f] min-h-screen flex items-center justify-center p-4">
+    <div
+      class="w-full max-w-md bg-[#142022] rounded-2xl shadow-2xl overflow-hidden border border-white/10"
+    >
+      <!-- Header -->
+      <div
+        class="bg-[#061a1f] p-8 flex flex-col items-center border-b border-white/10"
+      >
+        <a href="/" class="transition-transform hover:scale-105 duration-300">
+          <Image
+            src={logoPreico}
+            alt="Preico Jurídicos"
+            width={120}
+            height={120}
+            class="w-24 h-auto object-contain"
+          />
+        </a>
+        <h2 class="text-white text-xl font-bold mt-4 tracking-wide">
+          ÁREA CLIENTE
+        </h2>
+      </div>
+
+      <!-- Form -->
+      <div class="p-8">
+        <form class="flex flex-col gap-6">
+          <div class="space-y-2">
+            <label
+              for="email"
+              class="text-sm font-medium text-gray-300 uppercase tracking-wider"
+            >
+              Correo Electrónico
+            </label>
+            <div class="relative">
+              <i
+                class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
+              ></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="ejemplo@correo.com"
+                class="w-full bg-[#0a1112] border border-white/10 rounded-lg py-3 pl-12 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#c5a572] focus:ring-1 focus:ring-[#c5a572] transition-all"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label
+              for="password"
+              class="text-sm font-medium text-gray-300 uppercase tracking-wider"
+            >
+              Contraseña
+            </label>
+            <div class="relative">
+              <i
+                class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
+              ></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                class="w-full bg-[#0a1112] border border-white/10 rounded-lg py-3 pl-12 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#c5a572] focus:ring-1 focus:ring-[#c5a572] transition-all"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center gap-2 cursor-pointer group">
+              <input
+                type="checkbox"
+                class="rounded border-gray-600 bg-[#0a1112] text-[#c5a572] focus:ring-[#c5a572]"
+              />
+              <span
+                class="text-gray-400 group-hover:text-white transition-colors"
+                >Recordarme</span
+              >
+            </label>
+            <a
+              href="#"
+              class="text-[#c5a572] hover:text-[#d4b483] transition-colors"
+              >¿Olvidaste tu contraseña?</a
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-[#c5a572] hover:bg-[#d4b483] text-[#061a1f] font-bold py-3 rounded-lg uppercase tracking-widest transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-[#c5a572]/20"
+          >
+            Iniciar Sesión
+          </button>
+        </form>
+
+        <div class="mt-8 text-center">
+          <p class="text-gray-400 text-sm">
+            ¿No tienes cuenta?
+            <a
+              href="#"
+              class="text-[#c5a572] hover:text-[#d4b483] font-bold ml-1 transition-colors"
+              >Regístrate aquí</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-[#0a1112] p-4 text-center border-t border-white/5">
+        <a
+          href="/"
+          class="text-gray-500 hover:text-white text-sm flex items-center justify-center gap-2 transition-colors"
+        >
+          <i class="fas fa-arrow-left"></i> Volver al inicio
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
