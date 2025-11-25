@@ -5,14 +5,14 @@ import Layout from "@/layout/Layout.astro";
 import Banner from "@/components/Banner.astro";
 import VideoSection from "@/components/VideoSection.astro";
 
-import { PREICOJURIDICOS } from "@/constants/const";
 import Card from "@/components/Card.astro";
+import StatCard from "@/components/StatCard.astro";
 
 import raulImage from "@/assets/images/home-header-landscape-left-raul.png";
 import appStoreImage from "@/assets/images/appstore.png";
 import cardUsuryImage from "@/assets/images/card-usury-testimonials.png";
-import StatCard from "@/components/StatCard.astro";
 
+import { PREICOJURIDICOS } from "@/constants/const";
 const title = `Usura en Créditos | ${PREICOJURIDICOS}`;
 ---
 
@@ -30,7 +30,7 @@ const title = `Usura en Créditos | ${PREICOJURIDICOS}`;
     <section>
       <VideoSection
         quoteText="Esto es la revolución contra las injusticias"
-        quoteColor="text-primary"
+        quoteColor="text-[#e84f1b]"
         videoUrl="https://www.preicojuridicos.com/assets/video/card-usury.mp4"
       />
     </section>
@@ -143,11 +143,7 @@ const title = `Usura en Créditos | ${PREICOJURIDICOS}`;
           <div
             class="aspect-video w-full rounded-lg overflow-hidden shadow-2xl border border-white/10"
           >
-            <video
-              class="w-full h-full object-cover"
-              controls
-              poster="https://www.preicojuridicos.com/assets/images/poster-video.jpg"
-            >
+            <video class="w-full h-full object-cover" controls>
               <source
                 src="https://www.preicojuridicos.com/assets/video/card-usury-left.mp4"
                 type="video/mp4"
