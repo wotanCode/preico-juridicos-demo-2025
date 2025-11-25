@@ -6,8 +6,142 @@ const title = `Contacto | ${PREICOJURIDICOS}`;
 ---
 
 <Layout title={title}>
-  <section class="max-w-7xl mx-auto py-16">
-    <h1 class="text-4xl font-bold text-white mb-8">Contacto</h1>
-    <p class="text-white">Contenido de la página de Contacto...</p>
+  <!-- Fondo -->
+  <section class="w-full bg-[#0f1b1c] py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <!-- Título -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white uppercase">
+          TODAS TUS CONSULTAS GRATUITAS
+        </h2>
+        <h3
+          class="text-2xl md:text-3xl font-bold text-[#d4a354] uppercase mt-2"
+        >
+          COMPLETAMENTE CONFIDENCIALES
+        </h3>
+      </div>
+
+      <!-- FORMULARIO -->
+      <form class="space-y-8 w-full">
+        <!-- GRID 5 CAMPOS -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="md:col-span-1">
+            <label class="text-white block mb-1">Nombre*</label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label class="text-white block mb-1">1er Apellido*</label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label class="text-white block mb-1">2do Apellido*</label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label class="text-white block mb-1">NIF / DNI / NIE*</label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+        </div>
+
+        <!-- TELÉFONO -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="text-white block mb-1">Número de teléfono*</label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label class="text-white block mb-1"
+              >Confirmar número de teléfono*</label
+            >
+            <input
+              type="text"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="text-white block mb-1">Correo electrónico*</label>
+            <input
+              type="email"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label class="text-white block mb-1"
+              >Confirmar correo electrónico*</label
+            >
+            <input
+              type="email"
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            />
+          </div>
+        </div>
+
+        <!-- SELECTS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="text-white block mb-1">Podéis contactarme*</label>
+            <select
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            >
+              <option>Selecciona una opción</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-white block mb-1">Mi consulta es sobre*</label>
+            <select
+              class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+            >
+              <option>Selecciona una opción</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- DESCRIPCIÓN -->
+        <div>
+          <label class="text-white block mb-1">
+            Describe aquí tu consulta (límite de 500 caracteres)*
+          </label>
+          <textarea
+            rows="6"
+            class="w-full px-3 py-2 rounded bg-white border border-gray-300"
+          ></textarea>
+        </div>
+
+        <!-- BOTÓN -->
+        <div class="flex justify-center">
+          <button
+            type="submit"
+            class="px-10 py-3 bg-gradient-to-r from-[#987444] to-[#e3b46e] text-white font-semibold rounded"
+          >
+            ENVIAR
+          </button>
+        </div>
+      </form>
+    </div>
   </section>
 </Layout>
