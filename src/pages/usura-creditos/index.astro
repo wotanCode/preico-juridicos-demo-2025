@@ -11,6 +11,7 @@ import Card from "@/components/Card.astro";
 import raulImage from "@/assets/images/home-header-landscape-left-raul.png";
 import appStoreImage from "@/assets/images/appstore.png";
 import cardUsuryImage from "@/assets/images/card-usury-testimonials.png";
+import StatCard from "@/components/StatCard.astro";
 
 const title = `Usura en Créditos | ${PREICOJURIDICOS}`;
 ---
@@ -100,5 +101,17 @@ const title = `Usura en Créditos | ${PREICOJURIDICOS}`;
         </a>
       </div>
     </section>
+
+    <section class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StatCard value="+5.000" label="Casos ganados" />
+        <StatCard value="120M €" label="Recuperados" />
+        <StatCard value="100%" label="Casos ganados" />
+        <StatCard value="1.900 m²" label="En instalaciones" />
+      </div>
+    </section>
+
+    <!-- Caso de éxito -->
+    <section></section>
   </div>
 </Layout>
