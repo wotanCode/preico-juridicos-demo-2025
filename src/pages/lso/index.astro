@@ -1,17 +1,221 @@
 ---
-import Layout from "@/layout/Layout.astro";
-import { PREICOJURIDICOS } from "@/constants/const";
+import { Image } from "astro:assets";
 
+import Layout from "@/layout/Layout.astro";
+import Banner from "@/components/Banner.astro";
+import VideoSection from "@/components/VideoSection.astro";
+
+import Card from "@/components/Card.astro";
+import StatCard from "@/components/StatCard.astro";
+
+import estibalizImg from "@/assets/images/estibaliz-lso.png";
+import appStoreImage from "@/assets/images/appstore.png";
+import lsoTestimonialsImage from "@/assets/images/lso-testimonials.png";
+
+import { PREICOJURIDICOS } from "@/constants/const";
 const title = `Ley de Segunda Oportunidad | ${PREICOJURIDICOS}`;
 ---
 
 <Layout title={title}>
-  <section class="max-w-7xl mx-auto py-16">
-    <h1 class="text-4xl font-bold text-white mb-8">
-      Ley de Segunda Oportunidad
-    </h1>
-    <p class="text-white">
-      Contenido de la página de Ley de Segunda Oportunidad...
-    </p>
-  </section>
+  <div class="flex flex-col gap-6">
+    <section class="px-16">
+      <Banner
+        image={{ src: estibalizImg, alt: "Estibaliz" }}
+        quoteColor="text-[#f19108]"
+        title="LEY DE LA SEGUNDA OPORTUNIDAD"
+        subTitle="CAERSE ESTÁ PERMITIDO, LEVANTARSE ES OBLIGATORIO"
+      />
+    </section>
+
+    <section>
+      <VideoSection
+        quoteText="Si te has caído no pasa nada, estás obligado a levantarte."
+        quoteColor="text-[#f19108]"
+        videoUrl="https://www.youtube.com/embed/NTu7Zd7poic?si=vb9jEhu-Oa1fe13h"
+      />
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card
+          color="brown"
+          title="¿A QUIÉN PUEDE AYUDAR LA LSO?"
+          body="A los deudores de buena fe, que cumpla los siguientes requisitos: Clica aqui para más información"
+          showIcon={true}
+        />
+        <Card
+          color="brown"
+          title="BENEFICIOS Y CONSECUENCIAS DE LA LSO"
+          body="Consigue empezar de 0, libre de deudas: Clica aqui para más información"
+          showIcon={true}
+        />
+        <Card
+          color="brown"
+          title="PROFESIONALES NECESARIOS Y SUS HONORARIOS"
+          body="Todo lo que necesitas saber sobre los honorarios: Clica aqui para más información"
+          showIcon={true}
+        />
+        <Card
+          color="brown"
+          title="BENEFICIOS"
+          body="Beneficios de la Ley de Segunda Oportunidad: Clica aqui para más información"
+          showIcon={true}
+        />
+      </div>
+    </section>
+
+    <section
+      class="relative w-full h-[400px] flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <Image
+          src={lsoTestimonialsImage}
+          alt="Background"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      <div
+        class="relative z-10 flex flex-col items-center text-center gap-6 px-4"
+      >
+        <h2
+          class="text-4xl md:text-6xl font-bold text-white uppercase leading-tight drop-shadow-lg"
+        >
+          DESCARGA NUESTRA APP
+          <br />
+          GRATUITA
+        </h2>
+
+        <a
+          href="https://apps.apple.com/cl/app/preico-juridicos/id1554277140"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-transform hover:scale-105"
+        >
+          <Image
+            src={appStoreImage}
+            alt="Disponible en App Store"
+            class="h-16 w-auto"
+          />
+        </a>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StatCard value="+5.000" label="Casos ganados" />
+        <StatCard value="120M €" label="Recuperados" />
+        <StatCard value="100%" label="Casos ganados" />
+        <StatCard value="1.900 m²" label="En instalaciones" />
+      </div>
+    </section>
+
+    <!-- Caso de éxito -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-12">
+        <div class="flex-1 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold uppercase leading-tight">
+            <span class="text-white block">UN NUEVO</span>
+            <span class="text-[#f19108]">CASO DE ÉXITO</span>
+          </h2>
+        </div>
+
+        <div class="hidden md:block">
+          <div
+            class="w-16 h-16 rounded-full border-2 border-[#f19108] flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-[#f19108]"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRID 2 VIDEOS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- VIDEO 1 -->
+        <div class="flex flex-col items-center">
+          <div
+            class="aspect-video w-full rounded-lg overflow-hidden shadow-2xl border border-white/10"
+          >
+            <iframe
+              src="https://www.youtube.com/embed/fMp_Pck7YjY?si=kawZr5DkZEJviNwO"
+              class="w-full h-full"
+              frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="mt-6 text-center px-4">
+            <svg
+              class="w-10 h-10 text-[#f19108] mx-auto mb-4"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"
+              ></path>
+            </svg>
+
+            <p class="text-white text-xl italic mb-2">
+              (Voy a saltar para renacer, como el ave fénix)
+            </p>
+            <p class="text-[#f19108] font-bold uppercase">
+              Andrés, cliente de LSO
+            </p>
+            <p class="text-gray-400 text-sm">
+              (Esta frase se cita en este vídeo)
+            </p>
+            <p class="text-[#f19108] font-bold uppercase mt-1">
+              CON RAÚL CASTAÑEDA
+            </p>
+          </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="flex flex-col items-center">
+          <div
+            class="aspect-video w-full rounded-lg overflow-hidden shadow-2xl border border-white/10"
+          >
+            <iframe
+              src="https://www.youtube.com/embed/0AZNJMk3Jmo?si=zOkdROY_cf4MlmSK"
+              class="w-full h-full"
+              frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="mt-6 text-center px-4">
+            <svg
+              class="w-10 h-10 text-[#f19108] mx-auto mb-4"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"
+              ></path>
+            </svg>
+
+            <p class="text-white text-xl italic mb-2">
+              (Nosotros también tenemos derechos, tengamos o no tengamos dinero)
+            </p>
+            <p class="text-[#f19108] font-bold uppercase">
+              Antonio, cliente de LSO
+            </p>
+            <p class="text-gray-400 text-sm">
+              (Esta frase se cita en este vídeo)
+            </p>
+            <p class="text-[#f19108] font-bold uppercase mt-1">
+              CON RAÚL CASTAÑEDA
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
