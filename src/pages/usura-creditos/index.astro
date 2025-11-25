@@ -1,13 +1,31 @@
 ---
 import Layout from "@/layout/Layout.astro";
 import { PREICOJURIDICOS } from "@/constants/const";
+import Banner from "@/components/Banner.astro";
+import VideoSection from "@/components/VideoSection.astro";
+
+import raulImage from "@/assets/images/home-header-landscape-left-raul.png";
 
 const title = `Usura en Créditos | ${PREICOJURIDICOS}`;
 ---
 
 <Layout title={title}>
-  <section class="max-w-7xl mx-auto py-16">
-    <h1 class="text-4xl font-bold text-white mb-8">Usura en Créditos</h1>
-    <p class="text-white">Contenido de la página de Usura en Créditos...</p>
-  </section>
+  <div class="flex flex-col gap-6">
+    <section>
+      <Banner
+        image={{ src: raulImage, alt: "Raul Castañeda" }}
+        quoteColor="text-[#e84f1b]"
+        title="USURA EN CRÉDITOS"
+        subTitle="LUCHAMOS POR TÍ, GANAMOS POR TÍ"
+      />
+    </section>
+
+    <section>
+      <VideoSection
+        quoteText="Esto es la revolución contra las injusticias"
+        quoteColor="text-primary"
+        videoUrl="https://www.preicojuridicos.com/assets/video/card-usury.mp4"
+      />
+    </section>
+  </div>
 </Layout>
